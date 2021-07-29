@@ -1,0 +1,104 @@
+# Guia paso a paso luego de la inatalacion
+
+1. Agrego los repositorios no libres
+   * Edito /etc/apt/source.list
+   * Agrego los arguentos 'contrib' y 'non-free' a cada registro de origen
+   * sudo apt-get update
+   * sudo apt-get upgrade
+   * sudo apt-get autoremove
+   * sudo apt-get clean
+
+2. Instalo firmware wifi
+   * sudo apt-get update
+   * sudo apt-get install firmware-iwlwifi
+   * Esto requiere reiniciar
+
+3. Instalo kernel
+   * Agrego la siguiente line a /etc/apt/source.list :
+     deb https://deb.debian.org/debian buster-backports main contrib nonfree
+   * sudo apt-get update
+   * sudo apt-get install -t buster-backports
+   * sudo apt-get install linux-image-5.10.0-0.bpo.7-amd64 linux-headers-5.10.0-0.bpo.7-amd64
+   * sudo update-grub2
+   * esto requiere reiniciar
+
+4. Instalo firmaware realtek
+   * sudo apt-get update
+   * sudo apt-get install firmware-realtek
+
+5. Configuro layout de teclado:
+   * En la esquina superios derecha click en el menu desplegable con forma de flecha apuntando asia abajo.
+   * Click en nuestro nombre de usuario cuando se alla desplegado el menu contextual
+   * Click en Account Settings cuando aparescan las opciones disponibles.
+   * En el panel izquierdo navegamos dentro de settings hasta Region & Languaje
+   * En la seccion Input sources:
+     - Eliminar y agregar una nueva entrada o modificar la existente de modo que quede 'Spanish(Latin American)'
+
+6. Instalo vim
+   * sudo apt-get update
+   * sudo apt-get install vim
+
+7. Instalo curl
+   * sudo apt-get update
+   * sudo apt-get install curl
+
+8. Instalo ksz
+   * sudo apt-get update
+   * sudo apt-get install ksh
+
+9. Instalo zsh
+   * sudo apt-get update
+   * sudo apt-get install zsh
+   * sudo chsh -s /usr/bin/ksh nruiz
+   * Esto requiere reloguearse
+
+10. Instalo git
+   * sudo apt-get update
+   * sudo apt-get install git
+
+11. Instalo ohmyzsh
+   * sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+12. configuro ohmyzsh
+    * Dentro del archivo ~/.zshrc
+      - Cambiar el valor de ZSH_THEME por "xiong-chiamiov-plus"
+
+13. Instalo atom
+    * descargo el packete desde https://atom.io/download/deb/
+    * sudo apt-get update
+    * sudo apt-get install ./atom-amd64.deb
+
+14. Instalo ruby
+    * sudo apt-get update
+    * sudo apt-get install ruby-full
+    * sudo apt-get install ruby
+    * sudo apt-get install rubygems
+
+15. Instalo fxruby
+    * sudo apt-get update
+    * sudo apt-get install libfox-1.6-dev
+    * sudo apt-get install libxrandr-dev
+    * sudo gem install fxruby
+
+16. Instalo sinatra
+    * sudo gem install sinatra
+
+17. Instalo sqlite3
+    * sudo apt-get update
+    * sudo apt-get install sqlite3
+    * sudo apt-get install libsqlite3-dev
+
+18. Instalo nodejs
+    * sudo apt-get update
+    * sudo apt-get install nodejs
+    * sudo apt-get install npm
+
+19. Instalo yarn
+    * sudo npm install --global yarn
+
+20. Instalo rails
+    * sudo gem install rails
+
+21. Instalo sqlitebrowser
+    * sudo apt-get update
+    * sudo apt-get install sqlitebrowser
